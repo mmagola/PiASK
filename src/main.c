@@ -1,7 +1,7 @@
 /*
  ============================================================================
  Name        : histogram_OMP.c
- Author      : MIS
+ Author      : Michal
  Version     :
  Copyright   : Your copyright notice
  Description : Only for image in grayscale
@@ -14,7 +14,6 @@
 #include <math.h>
 #include "FreeImage.h"
 
-#define NBR_OF_ELEMENTS 40000
 #define hist_size 256
 #define th_num 4
 
@@ -33,7 +32,7 @@ main() {
 		unsigned height = FreeImage_GetHeight(bitmap);
 		printf("picture loaded width = %d, height = %d \n", width, height);
 
-		// Calculate the number of bytes per pixel (3 for 24-bit or 4 for 32-bit)
+		// Calculate the number of bytes per pixel (1 for 8-bit or 4 for 32-bit)
 		bytespp = FreeImage_GetLine(bitmap) / width;
 		printf(" bytes per pixel = %d \n ", bytespp);
 
